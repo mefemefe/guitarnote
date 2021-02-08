@@ -1,12 +1,7 @@
 #Take a string and a fret number and return the note.
 def what_note(string, fret):
     scale = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G#"]
-    while fret >= 12:
-        fret -= 12
-    result = scale.index(string.upper()) + fret
-    while result >= 12:
-        result -= 12
-    return scale[result]
+    return scale[(scale.index(string.upper())+fret)%len(scale)]
 
 print("Enter the letter representing the string (A,A#,B,C,C#,D,D#,E,F,F#,G,G#)")
 st = input("String:")
